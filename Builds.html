@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="Style.css" rel="stylesheet">
+    <title>Path of Exile - Build Selector</title>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="PoE101.html">PATH OF EXILE</a></div>
+            <nav class="nav-links" id="navLinks">
+                <a href="PoE101.html">Home</a>
+                <a href="Characters.html">Characters</a>
+                <a href="Builds.html">Builds</a>
+                <a href="Campaign.html">Campaign</a>
+                <a href="Currency.html">Currency</a>
+				<a href="Bosses.html">Bosses</a>
+                <a href="Leagues.html">Leagues</a>
+				<a href="Contact.html">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <div class="builds-container">
+        <!-- MARAUDER -->
+        <div class="class-section" id="marauder">
+            <div class="class-header">
+                <span class="class-icon">⚔️</span>
+                <div class="class-info">
+                    <h2>Marauder</h2>
+                    <p class="class-type">Strength • Melee Powerhouse</p>
+                </div>
+            </div>
+            <div class="builds-grid">
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Righteous Fire Juggernaut</h3>
+                        <span class="ascendancy-badge">Juggernaut</span>
+                    </div>
+                    <div class="build-description">
+                        Walk through enemies as they burn around you. This tanky league starter scales incredibly well into endgame with minimal investment. Perfect for players who want to feel unkillable while maintaining solid clear speed.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">8,500+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Armour</div>
+                            <div class="stat-value">50K+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Regen</div>
+                            <div class="stat-value">2,000/s</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag starter">League Starter</span>
+                        <span class="tag tank">Tank</span>
+                        <span class="tag">DoT</span>
+                        <span class="tag budget">Budget</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Boneshatter Berserker</h3>
+                        <span class="ascendancy-badge">Berserker</span>
+                    </div>
+                    <div class="build-description">
+                        Shatter your own bones for explosive damage. This high-risk, extremely high-reward build delivers massive melee hits that obliterate bosses. Requires good gear and game knowledge but offers unmatched satisfaction.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">DPS</div>
+                            <div class="stat-value">50M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">6,000+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Attack Speed</div>
+                            <div class="stat-value">8+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag boss">Boss Killer</span>
+                        <span class="tag">Melee</span>
+                        <span class="tag">High DPS</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RANGER -->
+        <div class="class-section" id="ranger">
+            <div class="class-header">
+                <span class="class-icon">🏹</span>
+                <div class="class-info">
+                    <h2>Ranger</h2>
+                    <p class="class-type">Dexterity • Swift Huntress</p>
+                </div>
+            </div>
+            <div class="builds-grid">
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Lightning Arrow Deadeye</h3>
+                        <span class="ascendancy-badge">Deadeye</span>
+                    </div>
+                    <div class="build-description">
+                        Chain lightning through packs at incredible speed. One of the fastest map clearing builds in the game with excellent proj mechanics. Great for farming currency and blasting through content at breakneck pace.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Clear Speed</div>
+                            <div class="stat-value">S-Tier</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Range</div>
+                            <div class="stat-value">Screen+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Movement</div>
+                            <div class="stat-value">Fast</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag fast">Speed Farmer</span>
+                        <span class="tag">Bow</span>
+                        <span class="tag">Chain</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Toxic Rain Pathfinder</h3>
+                        <span class="ascendancy-badge">Pathfinder</span>
+                    </div>
+                    <div class="build-description">
+                        Blanket the screen with caustic pods that deal devastating damage over time. Excellent league starter with strong scaling, great boss damage, and synergy with flasks. HC viable with proper investment.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">DoT DPS</div>
+                            <div class="stat-value">15M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">5,500+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Evasion</div>
+                            <div class="stat-value">40K+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag starter">League Starter</span>
+                        <span class="tag">DoT</span>
+                        <span class="tag boss">Boss Killer</span>
+                        <span class="tag budget">Budget</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- WITCH -->
+        <div class="class-section" id="witch">
+            <div class="class-header">
+                <span class="class-icon">✨</span>
+                <div class="class-info">
+                    <h2>Witch</h2>
+                    <p class="class-type">Intelligence • Dark Sorceress</p>
+                </div>
+            </div>
+            <div class="builds-grid">
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Summon Raging Spirits Necromancer</h3>
+                        <span class="ascendancy-badge">Necromancer</span>
+                    </div>
+                    <div class="build-description">
+                        Command an army of flaming skulls that swarm and destroy enemies. Classic minion build with excellent damage and safety. Let your minions do the work while you focus on dodging mechanics.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Minion DPS</div>
+                            <div class="stat-value">30M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">7,000+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Minions</div>
+                            <div class="stat-value">20+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag starter">League Starter</span>
+                        <span class="tag">Minions</span>
+                        <span class="tag budget">Budget</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Detonate Dead Elementalist</h3>
+                        <span class="ascendancy-badge">Elementalist</span>
+                    </div>
+                    <div class="build-description">
+                        Explode corpses for massive screen-wide ignite damage. Incredible clear speed and boss damage with satisfying explosions. One of the strongest builds for all content when properly built.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Ignite DPS</div>
+                            <div class="stat-value">100M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">6,000+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">AoE</div>
+                            <div class="stat-value">Huge</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag boss">Boss Killer</span>
+                        <span class="tag">Spell</span>
+                        <span class="tag fast">Speed Farmer</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DUELIST -->
+        <div class="class-section" id="duelist">
+            <div class="class-header">
+                <span class="class-icon">🛡️</span>
+                <div class="class-info">
+                    <h2>Duelist</h2>
+                    <p class="class-type">Str/Dex • Master of Arms</p>
+                </div>
+            </div>
+            <div class="builds-grid">
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Lacerate Gladiator</h3>
+                        <span class="ascendancy-badge">Gladiator</span>
+                    </div>
+                    <div class="build-description">
+                        Slice through enemies with dual-wielding fury and incredible block mechanics. Strong defensive layers make this one of the best league starters. Scales well with investment for endgame content.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Block</div>
+                            <div class="stat-value">75%</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">6,500+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Bleed DPS</div>
+                            <div class="stat-value">10M+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag starter">League Starter</span>
+                        <span class="tag">Melee</span>
+                        <span class="tag">Block</span>
+                        <span class="tag budget">Budget</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Cyclone Slayer</h3>
+                        <span class="ascendancy-badge">Slayer</span>
+                    </div>
+                    <div class="build-description">
+                        Spin to win while leeching massive amounts of life. Smooth, satisfying gameplay with great clear speed and excellent sustain. AoE scaling makes you feel like a lawnmower through maps.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">DPS</div>
+                            <div class="stat-value">20M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">7,000+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Leech</div>
+                            <div class="stat-value">Max</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag">Melee</span>
+                        <span class="tag fast">Speed Farmer</span>
+                        <span class="tag">AoE</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHADOW -->
+        <div class="class-section" id="shadow">
+            <div class="class-header">
+                <span class="class-icon">👤</span>
+                <div class="class-info">
+                    <h2>Shadow</h2>
+                    <p class="class-type">Dex/Int • Cunning Assassin</p>
+                </div>
+            </div>
+            <div class="builds-grid">
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Lightning Trap Saboteur</h3>
+                        <span class="ascendancy-badge">Saboteur</span>
+                    </div>
+                    <div class="build-description">
+                        Lay devastating traps that shock and destroy. Incredible damage with built-in defensive mechanics from trap throwing distance. One of the safest and strongest league starters available.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Trap DPS</div>
+                            <div class="stat-value">40M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">6,000+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">ES</div>
+                            <div class="stat-value">2,000+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag starter">League Starter</span>
+                        <span class="tag">Traps</span>
+                        <span class="tag boss">Boss Killer</span>
+                        <span class="tag budget">Budget</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Poison Blade Vortex Assassin</h3>
+                        <span class="ascendancy-badge">Assassin</span>
+                    </div>
+                    <div class="build-description">
+                        Stack poison with spinning blades that stay close to you. Fast movement speed combined with high DPS and satisfying chain explosions. Great for blasting through maps and bossing.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Poison DPS</div>
+                            <div class="stat-value">25M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">5,000+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Movement</div>
+                            <div class="stat-value">Fast</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag fast">Speed Farmer</span>
+                        <span class="tag">Poison</span>
+                        <span class="tag">Explosions</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEMPLAR -->
+        <div class="class-section" id="templar">
+            <div class="class-header">
+                <span class="class-icon">🔮</span>
+                <div class="class-info">
+                    <h2>Templar</h2>
+                    <p class="class-type">Str/Int • Holy Warrior</p>
+                </div>
+            </div>
+            <div class="builds-grid">
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Spark Inquisitor</h3>
+                        <span class="ascendancy-badge">Inquisitor</span>
+                    </div>
+                    <div class="build-description">
+                        Fire projectiles that bounce around the screen ignoring enemy resistances. Incredible clear speed with satisfying screen-wide coverage. Scales well into endgame with consistent damage output.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">DPS</div>
+                            <div class="stat-value">30M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">6,500+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">ES</div>
+                            <div class="stat-value">3,000+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag fast">Speed Farmer</span>
+                        <span class="tag">Spell</span>
+                        <span class="tag">Projectiles</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Freezing Pulse Totems Hierophant</h3>
+                        <span class="ascendancy-badge">Hierophant</span>
+                    </div>
+                    <div class="build-description">
+                        Deploy totems that freeze everything in their path. Safe, reliable playstyle with great damage and excellent defensive layers. Perfect for players who prefer a hands-off approach to combat.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Totem DPS</div>
+                            <div class="stat-value">35M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">7,500+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Totems</div>
+                            <div class="stat-value">5+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag starter">League Starter</span>
+                        <span class="tag">Totems</span>
+                        <span class="tag budget">Budget</span>
+                        <span class="tag">Safe</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCION -->
+        <div class="class-section" id="scion">
+            <div class="class-header">
+                <span class="class-icon">⚡</span>
+                <div class="class-info">
+                    <h2>Scion</h2>
+                    <p class="class-type">All Stats • The Hybrid</p>
+                </div>
+            </div>
+            <div class="builds-grid">
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Aura Stacker Ascendant</h3>
+                        <span class="ascendancy-badge">Ascendant</span>
+                    </div>
+                    <div class="build-description">
+                        Stack dozens of auras for insane stats across the board. Extremely expensive to min-max but becomes one of the most powerful builds in the game. Dominates all content when fully invested.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">DPS</div>
+                            <div class="stat-value">200M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">ES</div>
+                            <div class="stat-value">15K+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Auras</div>
+                            <div class="stat-value">20+</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag">Endgame</span>
+                        <span class="tag">Aura</span>
+                        <span class="tag boss">Boss Killer</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+
+                <div class="build-card">
+                    <div class="build-header-section">
+                        <h3 class="build-name">Impale Bow Ascendant</h3>
+                        <span class="ascendancy-badge">Ascendant</span>
+                    </div>
+                    <div class="build-description">
+                        Combine Deadeye and Champion nodes for powerful bow impales. Excellent all-around performance with strong single target and good clear. Flexible build that adapts to various content types.
+                    </div>
+                    <div class="build-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">DPS</div>
+                            <div class="stat-value">50M+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Life</div>
+                            <div class="stat-value">6,000+</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Impale</div>
+                            <div class="stat-value">Max</div>
+                        </div>
+                    </div>
+                    <div class="build-tags">
+                        <span class="tag">Bow</span>
+                        <span class="tag boss">Boss Killer</span>
+                        <span class="tag">Versatile</span>
+                    </div>
+                    <button class="select-button">SELECT BUILD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            if (!mobileMenuBtn || !navLinks) {
+                console.error('Menu elements not found');
+                return;
+            }
+
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+
+            // Handle build selection
+            const selectButtons = document.querySelectorAll('.select-button');
+            selectButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const buildCard = this.closest('.build-card');
+                    const buildName = buildCard.querySelector('.build-name').textContent;
+                    const className = buildCard.closest('.class-section').querySelector('.class-info h2').textContent;
+                    
+                    alert('You selected: ' + buildName + ' (' + className + ')\n\nThis would typically take you to a detailed build guide or character creation page.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

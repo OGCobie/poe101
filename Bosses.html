@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path of Exile - Boss Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #8b4513;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff6b35;
+            text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+            text-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #ff6b35;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1002;
+            position: relative;
+        }
+
+        .hero {
+            margin-top: 80px;
+            height: 60vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff6b35;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 107, 53, 0.8); }
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        .bosses-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, transparent 100%);
+            border-radius: 15px;
+            border: 1px solid #8b4513;
+        }
+
+        .intro-title {
+            font-size: 42px;
+            color: #ff6b35;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            color: #c0c0c0;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .table-wrapper {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a1a10 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #8b4513;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(139, 69, 19, 0.2) 100%);
+        }
+
+        th {
+            padding: 25px 20px;
+            text-align: left;
+            font-size: 16px;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            border-bottom: 2px solid #8b4513;
+        }
+
+        th:first-child {
+            width: 10%;
+            text-align: center;
+        }
+
+        th:nth-child(2) {
+            width: 25%;
+        }
+
+        th:nth-child(3) {
+            width: 65%;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        td {
+            padding: 25px 20px;
+            color: #d0d0d0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        td:first-child {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #ff6b35;
+        }
+
+        .boss-name {
+            font-size: 20px;
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .boss-type {
+            font-size: 13px;
+            color: #b0b0b0;
+            font-style: italic;
+        }
+
+        .strategy-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .strategy-list li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+        }
+
+        .strategy-list li::before {
+            content: '⚔️';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+        }
+
+        .tips-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .tip-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a1a10 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #8b4513;
+            transition: all 0.3s;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .tip-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .tip-title {
+            font-size: 22px;
+            color: #ff6b35;
+            margin-bottom: 12px;
+        }
+
+        .tip-text {
+            color: #b0b0b0;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 80px 30px 30px;
+                gap: 25px;
+                transition: right 0.3s ease;
+                border-left: 2px solid #8b4513;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+                z-index: 1001;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 20px;
+                padding: 10px 0;
+                border-bottom: 1px solid #333;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .table-wrapper {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 700px;
+            }
+
+            th, td {
+                padding: 15px 12px;
+                font-size: 14px;
+            }
+
+            .intro-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="PoE101.html">PATH OF EXILE</a></div>
+            <div class="nav-links" id="navLinks">
+                <a href="PoE101.html">Home</a>
+                <a href="Characters.html">Characters</a>
+                <a href="Builds.html">Builds</a>
+                <a href="Campaign.html">Campaign</a>
+                <a href="Currency.html">Currency</a>
+				<a href="Bosses.html">Bosses</a>
+                <a href="Leagues.html">Leagues</a>
+				<a href="Contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <div class="bosses-container">
+        <div class="intro-section">
+            <h2 class="intro-title">Know Your Enemy</h2>
+            <p class="intro-text">
+                Every act in Path of Exile culminates in a challenging boss fight. Understanding attack patterns, damage types, and positioning is crucial to survival. This guide covers all major campaign bosses from Acts 1-10, with proven strategies to defeat each one.
+            </p>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Act</th>
+                        <th>Boss</th>
+                        <th>Strategy & Key Mechanics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="boss-name">Merveil, the Twisted</div>
+                            <div class="boss-type">Siren corrupted by Virtue Gems</div>
+                        </td>
+                        <td>
+                            <strong>Phase 1:</strong> Avoid her ice spear projectiles and keep moving. She's stationary in this phase.
+                            <ul class="strategy-list">
+                                <li>Stay at medium range to dodge ice spears</li>
+                                <li>Cold resistance is very helpful</li>
+                                <li>Kill summons if they overwhelm you</li>
+                            </ul>
+                            <strong>Phase 2:</strong> She transforms and becomes mobile. Watch for water spawns and freezing ground effects.
+                            <ul class="strategy-list">
+                                <li>Keep moving to avoid her charging attacks</li>
+                                <li>Don't stand in freezing water pools</li>
+                                <li>Focus on dodging over raw damage output</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="boss-name">Vaal Oversoul</div>
+                            <div class="boss-type">Ancient stone construct</div>
+                        </td>
+                        <td>
+                            <strong>Main Mechanics:</strong> Massive slam attacks, rock projectiles, and lightning totems.
+                            <ul class="strategy-list">
+                                <li>Watch for the slam animation - move immediately when you see it</li>
+                                <li>Destroy lightning totems as soon as they spawn</li>
+                                <li>Stay mobile and don't stand directly in front of him</li>
+                                <li>Lightning resistance recommended for totem damage</li>
+                                <li>His laser beam is telegraphed - dodge to the side</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="boss-name">Dominus, Ascendant</div>
+                            <div class="boss-type">High Templar of the Eternal Empire</div>
+                        </td>
+                        <td>
+                            <strong>Phase 1 (Human Form):</strong> Uses blood rain, touch of god, and summons.
+                            <ul class="strategy-list">
+                                <li>Avoid his melee range - his touch attack deals massive damage</li>
+                                <li>Watch for blood rain telegraph and move away</li>
+                                <li>Kill or kite his summoned minions</li>
+                                <li>Physical damage reduction helps significantly</li>
+                            </ul>
+                            <strong>Phase 2 (Demon Form):</strong> Transforms into a massive demon with new attacks.
+                            <ul class="strategy-list">
+                                <li>Ground slam creates shockwaves - dodge perpendicular to him</li>
+                                <li>Blood projectiles track - keep moving in circles</li>
+                                <li>Don't stand in blood rain zones</li>
+                                <li>Be patient - this is a long fight, survival over speed</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="boss-name">Malachai, The Nightmare</div>
+                            <div class="boss-type">Architect of the Cataclysm</div>
+                        </td>
+                        <td>
+                            <strong>Three Phase Fight:</strong> One of the hardest campaign bosses.
+                            <ul class="strategy-list">
+                                <li>Phase 1: Avoid tentacle slams and teleport traps, watch for heart explosions</li>
+                                <li>Phase 2: Piety assists you - focus fire on Malachai, new attack patterns emerge</li>
+                                <li>Phase 3: Triple slam is deadly - dodge multiple directions quickly</li>
+                                <li>Hearts that spawn will explode - don't stand near them</li>
+                                <li>Max your resistances before this fight</li>
+                                <li>Bring at least 3 life flasks and keep them full</li>
+                                <li>Don't panic - learn the attack patterns through attempts</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <div class="boss-name">Kitava, The Insatiable</div>
+                            <div class="boss-type">God of Corruption</div>
+                        </td>
+                        <td>
+                            <strong>First Major Endgame-Style Boss:</strong> Tests your build properly for the first time.
+                            <ul class="strategy-list">
+                                <li>Ground slam waves - dodge sideways or jump over with movement skill</li>
+                                <li>Heart explosions spawn adds - kill or avoid based on situation</li>
+                                <li>His hand slam is telegraphed - watch for the wind-up</li>
+                                <li>When he screams, adds spawn - be ready to deal with them</li>
+                                <li>Fire resistance is crucial for this fight</li>
+                                <li>-30% resistance penalty after defeating him - prepare for Act 6</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <div class="boss-name">The Brine King</div>
+                            <div class="boss-type">Fallen god of the seas</div>
+                        </td>
+                        <td>
+                            <strong>Water and Ice Themed:</strong> Freeze mechanics are dangerous.
+                            <ul class="strategy-list">
+                                <li>He summons minions constantly - decide when to kill vs. kite them</li>
+                                <li>Freeze beam is his most dangerous attack - keep moving</li>
+                                <li>Water spouts appear on the ground - avoid standing in them</li>
+                                <li>Freeze immunity flask is extremely helpful</li>
+                                <li>Cold resistance should be capped</li>
+                                <li>Stay mobile - standing still = getting frozen</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            <div class="boss-name">Arakaali, Spinner of Shadows</div>
+                            <div class="boss-type">Spider goddess</div>
+                        </td>
+                        <td>
+                            <strong>Spider Mechanics:</strong> Spawns and poison are the main threats.
+                            <ul class="strategy-list">
+                                <li>Baby spiders spawn throughout - clear them periodically</li>
+                                <li>Web spray slows you - don't get trapped against walls</li>
+                                <li>She leaps across the arena - watch for landing spot</li>
+                                <li>Projectile spray in a cone - dodge to the sides</li>
+                                <li>Poison immunity or removal flask recommended</li>
+                                <li>Keep her centered in the arena to avoid being cornered</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            <div class="boss-name">Solaris & Lunaris</div>
+                            <div class="boss-type">Twin goddesses of sun and moon</div>
+                        </td>
+                        <td>
+                            <strong>Dual Boss Fight:</strong> You fight them separately, then together.
+                            <ul class="strategy-list">
+                                <li>Solaris uses fire beams and creates burning ground - constant movement required</li>
+                                <li>Lunaris fires cold projectiles and creates freezing zones</li>
+                                <li>When fighting both: focus one while dodging the other</li>
+                                <li>Max both fire and cold resistances</li>
+                                <li>This is one of the hardest fights in the campaign</li>
+                                <li>Don't be afraid to over-level or upgrade gear for this fight</li>
+                                <li>Use pillars for line of sight breaking when overwhelmed</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            <div class="boss-name">The Depraved Trinity</div>
+                            <div class="boss-type">Shavronne, Doedre & Maligaro fused</div>
+                        </td>
+                        <td>
+                            <strong>Three Bosses in One:</strong> Each with signature mechanics.
+                            <ul class="strategy-list">
+                                <li>Shavronne: Lightning attacks and teleports - keep distance</li>
+                                <li>Doedre: Curses and chaos damage - curse removal flask helps</li>
+                                <li>Maligaro: Blade attacks and fast movement - watch for telegraphs</li>
+                                <li>They share a health pool but attack in sequence</li>
+                                <li>Final combined phase is hectic - prioritize dodging</li>
+                                <li>All three resistances should be capped</li>
+                                <li>Focus fire one at a time rather than spreading damage</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <div class="boss-name">Kitava, The Insatiable (Final)</div>
+                            <div class="boss-type">God of Corruption - Empowered</div>
+                        </td>
+                        <td>
+                            <strong>Final Campaign Boss:</strong> All mechanics from Act 5 but more dangerous.
+                            <ul class="strategy-list">
+                                <li>All previous Kitava attacks but faster and harder hitting</li>
+                                <li>Screen-wide sweep attack - move to designated safe zones</li>
+                                <li>When he covers half the arena in corruption - reposition immediately</li>
+                                <li>Heart explosions are more frequent - constant awareness needed</li>
+                                <li>Ground slams create multiple waves - dodge timing is critical</li>
+                                <li>This is a marathon fight - patience is key</li>
+                                <li>Bring 4-5 life flasks and a quicksilver for mobility</li>
+                                <li>Survival is more important than damage - focus on not dying</li>
+                                <li>After defeating: -30% more resistance penalty (total -60%)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tips-section">
+            <div class="tip-card">
+                <div class="tip-icon">🛡️</div>
+                <h3 class="tip-title">Cap Your Resistances</h3>
+                <p class="tip-text">The single most important preparation for any boss. Aim for 75% elemental resistances. After Acts 5 and 10, you'll have penalties that reduce your resistances by 30% each time.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-icon">⚗️</div>
+                <h3 class="tip-title">Bring the Right Flasks</h3>
+                <p class="tip-text">Multiple life flasks are essential. Utility flasks for freeze, bleed, and curse immunity can make difficult fights trivial. A quicksilver flask helps with dodging.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-icon">📚</div>
+                <h3 class="tip-title">Learn the Patterns</h3>
+                <p class="tip-text">Don't be discouraged by deaths. Each attempt teaches you attack patterns. Most boss attacks are telegraphed - watch for animations and visual cues before big hits.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-icon">⚔️</div>
+                <h3 class="tip-title">Upgrade Your Gear</h3>
+                <p class="tip-text">Struggling with a boss? Check your gear. Often a weapon upgrade or better life/resistance rolls on armor can make a huge difference. Don't be afraid to trade or craft.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-icon">🎯</div>
+                <h3 class="tip-title">Positioning Matters</h3>
+                <p class="tip-text">Many boss attacks are directional or create ground effects. Stay mobile, use the arena space, and don't get cornered. Movement skills like Dash or Flame Dash can be lifesavers.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-icon">💪</div>
+                <h3 class="tip-title">Level Up If Needed</h3>
+                <p class="tip-text">There's no shame in being a few levels higher. If a boss is destroying you, go back and level up in earlier zones. Being 2-3 levels higher can make a significant difference.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.onclick = function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        };
+
+        // Close menu when clicking on a link
+        const links = document.querySelectorAll('.nav-links a');
+        for (let i = 0; i < links.length; i++) {
+            links[i].onclick = function() {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            };
+        }
+
+        // Close menu when clicking outside
+        document.onclick = function(e) {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            }
+        };
+    </script>
+</body>
+</html>

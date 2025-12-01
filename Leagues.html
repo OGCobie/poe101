@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Path of Exile - Leagues</title>
+  <link href="Style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="PoE101.html">PATH OF EXILE</a></div>
+      <div class="nav-links" id="navLinks">
+        <a href="PoE101.html">Home</a>
+        <a href="Characters.html">Characters</a>
+        <a href="Builds.html">Builds</a>
+        <a href="Campaign.html">Campaign</a>
+        <a href="Currency.html">Currency</a>
+        <a href="Bosses.html">Bosses</a>
+        <a href="Leagues.html">Leagues</a>
+		<a href="Contact.html">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </nav>
+
+
+
+  <!-- Main Content -->
+  <div class="campaign-container">
+    <div class="intro-section">
+      <h2 class="intro-title">League History</h2>
+      <p class="intro-text">
+        Path of Exile releases a new challenge league roughly every 13–16 weeks. Each league introduces unique mechanics, expansion content, and balance changes. Here are the last 10 leagues and what they offered.
+      </p>
+    </div>
+
+    <!-- League Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>League</th>
+          <th>Release</th>
+          <th>Content Offered</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Keepers</td>
+          <td>Oct 2025</td>
+          <td>Introduced Keeper NPCs with customizable modifiers and rewards.</td>
+        </tr>
+        <tr>
+          <td>Mercenaries</td>
+          <td>Jun 2025</td>
+          <td>Added mercenary companions with unique skills and contracts.</td>
+        </tr>
+        <tr>
+          <td>Settlers of Kalguur</td>
+          <td>Jul 2024</td>
+          <td>Expansion featuring Kalguur settlers, new crafting lantern mechanic.</td>
+        </tr>
+        <tr>
+          <td>Necropolis</td>
+          <td>Mar 2024</td>
+          <td>Undertaker NPC, corpse crafting system, graveyard encounters.</td>
+        </tr>
+        <tr>
+          <td>Affliction</td>
+          <td>Dec 2023</td>
+          <td>Wildwood areas, Wisps mechanic, new ascendancy classes.</td>
+        </tr>
+        <tr>
+          <td>Ancestor</td>
+          <td>Aug 2023</td>
+          <td>Trial of the Ancestors tournament, new Karui-themed uniques.</td>
+        </tr>
+        <tr>
+          <td>Crucible</td>
+          <td>Apr 2023</td>
+          <td>Forge weapons with passive skill trees, new Atlas changes.</td>
+        </tr>
+        <tr>
+          <td>Sanctum</td>
+          <td>Dec 2022</td>
+          <td>Introduced roguelike Forbidden Sanctum dungeon with relic system.</td>
+        </tr>
+        <tr>
+          <td>Kalandra</td>
+          <td>Aug 2022</td>
+          <td>Lake of Kalandra reflections, mirrored encounters, new uniques.</td>
+        </tr>
+        <tr>
+          <td>Sentinel</td>
+          <td>May 2022</td>
+          <td>Deploy sentinels to empower monsters for loot multipliers.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const navLinks = document.getElementById("navLinks");
+    mobileMenuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      mobileMenuBtn.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+    });
+  </script>
+</body>
+</html>
